@@ -1,0 +1,70 @@
+{
+  "name": "vue-cli-template-ts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint",
+    "lint:scss": "stylelint ./src/**/*.{vue,scss} --fix"
+  },
+  "dependencies": {
+    "@vue/composition-api": "1.0.0-beta.8",
+    "core-js": "3.6.4",
+    "vue": "2.6.11",
+    "vue-class-component": "7.2.2",
+    "vue-property-decorator": "8.3.0",
+    "vue-router": "3.1.5",
+    "vuex": "3.1.2"
+  },
+  "devDependencies": {
+    "@types/jest": "24.9.1",
+    "@typescript-eslint/eslint-plugin": "2.18.0",
+    "@typescript-eslint/parser": "2.18.0",
+    "@vue/cli-plugin-babel": "4.2.3",
+    "@vue/cli-plugin-e2e-cypress": "4.2.3",
+    "@vue/cli-plugin-eslint": "4.2.3",
+    "@vue/cli-plugin-router": "4.2.3",
+    "@vue/cli-plugin-typescript": "4.2.3",
+    "@vue/cli-plugin-unit-jest": "4.2.3",
+    "@vue/cli-plugin-vuex": "4.2.3",
+    "@vue/cli-service": "4.2.3",
+    "@vue/eslint-config-prettier": "6.0.0",
+    "@vue/eslint-config-typescript": "5.0.2",
+    "@vue/test-utils": "1.0.5",
+    "eslint": "6.8.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-vue": "6.2.1",
+    "lint-staged": "9.5.0",
+    "prettier": "1.19.1",
+    "sass": "1.26.2",
+    "sass-loader": "8.0.2",
+    "stylelint": "13.2.0",
+    "stylelint-config-recommended-scss": "4.2.0",
+    "stylelint-order": "4.0.0",
+    "stylelint-scss": "3.14.2",
+    "stylelint-webpack-plugin": "1.2.3",
+    "typescript": "3.7.5",
+    "vue-template-compiler": "2.6.11"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npm run lint",
+      "git add"
+    ],
+    "*.vue": [
+      "npm run lint",
+      "npm run lint:scss",
+      "git add"
+    ],
+    "*.scss": [
+      "npm run lint:scss",
+      "git add"
+    ]
+  }
+}
